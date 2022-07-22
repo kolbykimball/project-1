@@ -1,0 +1,36 @@
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"; */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 60px;
+    text-align: center;
+    background: black;
+}
+
+.title {
+    color: white;
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    flex: 30%;
+    background-color: darkgray;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+section {
+    flex: 70%;
+    background-color: aliceblue;
+    padding: 20px;
+}
