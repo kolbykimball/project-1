@@ -25,7 +25,7 @@ searchForm2.addEventListener("submit", function (event) {
     if (searchText.length > 0) {
         historyItems.push(searchText);
         updatePlayerID();
-        fetchPlayerStats();
+        onFetchPlayerStats();
     } else {
         alert("Please enter a valid player name.")
         return;
@@ -37,10 +37,15 @@ function updatePlayerID(){
     pID.textContent= idText;
 };
 
-function fetchPlayerStats() {
+function onFetchPlayerStats(){
     playerID = playernameinput2El.value;
+    fetchPlayerStats(playerID);
+};
+
+function fetchPlayerStats(playerId) {
+   
     // var getPlayerStatsApi = `https://api.sportsdata.io/v3/nfl/stats/json/DailyFantasyPlayers/${date}?key=${apiKey}`;
-    var getPlayerStatsApi2 = `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerID}?key=1e7382eee81a4fd19631d38f764c1449`
+    var getPlayerStatsApi2 = `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerId}?key=1e7382eee81a4fd19631d38f764c1449`
     fetch(getPlayerStatsApi2, {
         // "method": "GET",
         // "headers": {
@@ -53,7 +58,7 @@ function fetchPlayerStats() {
         return response.json()
     }).then(function (data) {
         console.log(data);
-        pName.textContent = data.FantasyDraftName
+        pName.textContent = data.Name
         var playerImage = data.PhotoUrl
         console.log(data.PhotoUrl)
         pImg.setAttribute("src", playerImage)
@@ -67,3 +72,15 @@ function fetchPlayerStats() {
 
     })
 }
+
+function init (){
+    var searchQuery = window.location.search;
+    var urlParams = new URLSearchParams(searchQuery);
+    var playerIdInput = urlParams.get("playerid");
+    console.log(playerIdInput);
+    playernameinput2El.textContent = playerIdInput;
+    fetchPlayerStats(playerIdInput);
+    
+}
+
+init ();
