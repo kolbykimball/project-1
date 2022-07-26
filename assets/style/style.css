@@ -1,9 +1,23 @@
-* {
-    h1
+h1 {
+    margin:16px;
+    width:100%;
+    /* text-align: center;
+    padding: 10% 30%; */
 }
 
 body {
     font-family: "Trirong", serif;
+    /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg"); */
+    background-repeat: no-repeat;
+    background-position: center; 
+
+}
+
+.custom-div{
+    margin:20%;
+    text-align: center; 
+    /* background-color:white; */
+    
 }
 
 .custom-p {
@@ -20,3 +34,64 @@ body {
     margin: 10px;
 }
 
+#instructions {
+    font-size: 22px;
+}
+
+.bg {
+     /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+
+  opacity: 0.1;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* from Kolby */
+* {
+    box-sizing: border-box;
+}
+
+
+.hero {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+main {
+    display: flex;
+}
+aside {
+    flex: 30%;
+    background-color: darkgray;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+section {
+    flex: 70%;
+    background-color: aliceblue;
+    padding: 20px;
+}
+.title {
+    color: rgb(0, 4, 8);
+    font-size: 50px;
+}
+.title-container {
+    background-color: whitesmoke;
+    width: 30%;
+    border-radius: 50%;
+}
+.subtitle {
+    color: rgb(0, 3, 5);
+}
+.panel-heading {
+    background-color: rgb(197, 44, 44);
+    color: white;
+}
