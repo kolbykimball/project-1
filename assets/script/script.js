@@ -1,9 +1,12 @@
-var date = "2021-OCT-21";
+var date = "2022-JAN-09";
+var currDT = moment().format("YYYY"+"-"+"MMM"+"-"+"DD").toUpperCase()
 var apiKey = "1e7382eee81a4fd19631d38f764c1449";
+var playerID = "19801"
 
 function fetchPlayerStats1() {
-    var getPlayerStatsApi = `https://api.sportsdata.io/v3/nfl/stats/json/DailyFantasyPlayers/${date}?key=${apiKey}`;
-    fetch(getPlayerStatsApi, {
+    // var getPlayerStatsApi = `https://api.sportsdata.io/v3/nfl/stats/json/DailyFantasyPlayers/${date}?key=${apiKey}`;
+    var getPlayerStatsApi2 = `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerID}?key=1e7382eee81a4fd19631d38f764c1449`
+    fetch(getPlayerStatsApi2, {
         // "method": "GET",
         // "headers": {
         //     "Ocp-Apim-Subscription-Key": "1e7382eee81a4fd19631d38f764c1449",
@@ -15,6 +18,7 @@ function fetchPlayerStats1() {
         return response.json()
     }).then(function (data) {
         console.log(data);
+        console.log(currDT);
     })
 }
 
