@@ -67,7 +67,7 @@ body {
 
 
 .hero {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg);
+    background-image: url('../../assets/images/image\ 1\ from\ pexels.png');
     background-repeat: no-repeat;
     background-position: center;
     position: static;
@@ -121,14 +121,16 @@ section {
     border-radius: 50%;  */
 }
 
-/* .list-details{
-    text-align: left!important; 
-} */
+
 
 .subtitle {
     color: rgb(255, 255, 255);
     text-align: left;
-
+    background-color:rgb(34, 34, 34);
+    width: max-content;
+    margin: 16px;
+    padding: 8px;
+    border-radius: 8px;
 
 
 }
@@ -136,4 +138,14 @@ section {
 .panel-heading {
     background-color: rgb(197, 44, 44);
     color: white;
+}
+
+#bottom-panel{
+    border-radius:0 0 8px 8px;
+}
+
+#player-name-input{
+    text-align: center;
+    color:grey;
+    font-weight: bold;
 }

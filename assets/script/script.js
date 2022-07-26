@@ -1,7 +1,14 @@
+var searchForm1 = document.getElementById('search-form1');
+var searchForm2 = document.getElementById('search-form2');
+var searchForms = searchForm1, searchForm2;
+var playernameinputEl = document.getElementById("player-name-input");
+var searchBtn1El = document.getElementById("search-btn1");
 var date = "2022-JAN-09";
-var currDT = moment().format("YYYY"+"-"+"MMM"+"-"+"DD").toUpperCase()
+var currDT = moment().format("YYYY" + "-" + "MMM" + "-" + "DD").toUpperCase()
 var apiKey = "1e7382eee81a4fd19631d38f764c1449";
 var playerID = "19801"
+var historyItems = [];
+
 
 function fetchPlayerStats1() {
     // var getPlayerStatsApi = `https://api.sportsdata.io/v3/nfl/stats/json/DailyFantasyPlayers/${date}?key=${apiKey}`;
@@ -36,3 +43,17 @@ fetchPlayerStats1();
 // }
 
 // getPlayerStats2();
+
+searchForm1.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var searchText = playernameinputEl.value;
+    console.log(searchText);
+
+    if (searchText.length > 0) {
+        historyItems.push(searchText);
+
+    } else {
+        alert("Please enter a valid player name.")
+        return;
+    }
+});
