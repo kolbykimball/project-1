@@ -4,6 +4,9 @@ h1 {
     /* text-align: center;
     padding: 10% 30%; */
 }
+h2 {
+    font-size: large;
+}
 
 body {
     font-family: "Trirong", serif;
@@ -60,17 +63,19 @@ body {
 }
 
 
-.hero {
+.hero { 
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg);
     background-repeat: no-repeat;
-    background-position: center;
-}
+    background-position: center;  
+    position: relative;
+} 
+
 main {
     display: flex;
 }
 aside {
     flex: 30%;
-    background-color: darkgray;
+    background-color: rgb(235, 235, 235);
     padding: 20px;
     flex-wrap: wrap;
 }
@@ -79,17 +84,35 @@ section {
     background-color: aliceblue;
     padding: 20px;
 }
+
+/* .bg-image {
+    padding-left: 200px;
+    opacity: .3;
+    max-height: 800px;
+    max-width: 800px;
+    justify-content: center;
+} */
+
 .title {
-    color: rgb(0, 4, 8);
+    color: rgb(255, 255, 255);
     font-size: 50px;
+    text-align: left;
+    /* position: absolute; */
+    
 }
+
 .title-container {
-    background-color: whitesmoke;
+    position: relative;
+    /* background-color: whitesmoke;
     width: 30%;
-    border-radius: 50%;
-}
+    border-radius: 50%;  */
+} 
 .subtitle {
-    color: rgb(0, 3, 5);
+    color: rgb(255, 255, 255);
+    text-align: left;
+    
+
+
 }
 .panel-heading {
     background-color: rgb(197, 44, 44);
