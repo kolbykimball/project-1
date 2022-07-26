@@ -46,6 +46,11 @@ body {
     font-size: 22px;
 }
 
+#player-imgEl {
+    transform: scale(150%);
+    padding: 23px 36px;
+}
+
 .bg {
     /* Set rules to fill background */
     min-height: 100%;
