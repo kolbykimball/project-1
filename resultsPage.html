@@ -34,13 +34,28 @@
         </div>
         <div class="hero-body">
             <!-- <img class="bg-image" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg"> -->
-            <div class="container has-text-centered title-container">
-                <h1 class="title is-1">
-                    Fantasy Football
-                </h1>
-                <p class="subtitle">
-                    Player Picker
-                </p>
+            <div
+                class="is-flex is-align-items-flex-start is-justify-content-space-between container has-text-centered title-container">
+                <!-- Heading Text on results page -->
+                <div class="column">
+                    <h1 class="title is-1">
+                        Fantasy Football
+                    </h1>
+                    <p class="subtitle">
+                        Player Picker
+                    </p>
+                </div>
+                <!-- Search BOX in header -->
+                <div class="column is-align-self-flex-end">
+                    <form id="search-form2">
+                        <input id="player-name-input2" type="text" class="input mt-3"
+                            placeholder="Example: '4314'=Tom Brady">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <button type="submit" for="player-name-input2" id="search-btn2" class="button is-link is-large">
+                            Search
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -62,6 +77,7 @@
                     <div class="player-stat-content">
                         Player stats will show here
                         <ul>
+                            <li>ID: <span id="idEl"></span></li>
                             <li>TEAM: <span id="teamEl"></span></li>
                             <li>NUMBER: <span id="numEl"></span></li>
                             <li>HEIGHT: <span id="hgtEl"></span></li>
@@ -101,8 +117,8 @@
             </article>
         </section>
     </main>
-    <script src="./assets/script/script2.js"></script>
     <script src="./assets/script/script.js"></script>
+    <script src="./assets/script/script2.js"></script>
 </body>
 
 </html>

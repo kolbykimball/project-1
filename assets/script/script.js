@@ -1,6 +1,4 @@
 var searchForm1 = document.getElementById('search-form1');
-var searchForm2 = document.getElementById('search-form2');
-var searchForms = searchForm1, searchForm2;
 var playernameinputEl = document.getElementById("player-name-input");
 var playerNameDisplay = document.getElementById('player-nameEl');
 var searchBtn1El = document.getElementById("search-btn1");
@@ -10,9 +8,11 @@ var apiKey = "1e7382eee81a4fd19631d38f764c1449";
 var bkBtn = document.getElementById('back-btn');
 var playerID = ""
 var historyItems = [];
+var idEl = document.getElementById('idEl');
 
 function updatePlayerName(){
     playerID = playernameinputEl.value;
+    idEl.textContent = playerID;
     playerNameDisplay.innerText(playernameinputEl.value);
 }
 
@@ -65,9 +65,3 @@ searchForm1.addEventListener("submit", function () {
 
 });
 
-
-// Goes back to the search page 
-bkBtn.addEventListener("click", function () {
-           window.open('./index.html'); 
-           console.log("check");
-});
