@@ -1,3 +1,16 @@
+* {
+    h1
+}
+
+body {
+    font-family: "Trirong", serif;
+}
+
+.custom-p {
+
+    font-size: 100px;
+}
+
 .panel-heading {
     background-color: rgb(197, 44, 44);
     color: white;
@@ -6,3 +19,4 @@
 .button {
     margin: 10px;
 }
+
