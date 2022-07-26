@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,30 +20,35 @@
     </header>
     <div class="custom-div column is-half is-offset-one-quarter">
         <p class="panel-heading">
-            Search and compare players for your fantasy football team.
+            Search and compare players by their Fantasy ID number.
         </p>
-        <div class="container ">
-            <form>
-            <p class="control has-icons-left">
-                <input class="input" type="text" placeholder="Enter Player Name..">
-                <span class="icon is-left">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </span>
-            </p>
-            <a href="./resultsPage.html">
-                <button class="button is-link is-large">
-                    Search
-                </button>
-            </a>
+        <div class="container">
+            <form id="search-form1">
+                <p class="control has-icons-left">
+                    <input id="player-name-input" class="input" type="text" placeholder="Example: '4314'=Tom Brady">
+                    <span class="icon is-left">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </span>
+                </p>
+                <p class="panel-heading" id="bottom-panel">
+                    Don't know a player's Fantasy ID? <button><a
+                            href="https://fantasydata.com/nfl/fantasy-football-leaders?season=2021&seasontype=1&scope=1&subscope=1&aggregatescope=1&range=3">
+                            click here</a></button>
+                </p>
+                <a style="color:white" href="./resultsPage.html">
+                <button type="submit" for="player-name-input" id="search-btn1" class="button is-link is-large my-5">
+                        Search
+                    </button>
+                </a>
             </form>
             <div>
-                <p class="content is-large">Once you search for a player you'll get:</p>
-                <ul>
-                    <li>Up-to-date news reports. </li>
-                    <li>Player stats. </li>
-                    <li>Player info. </li>
+                <p class="content is-size-3 my-3">Once you search for a player you'll get:</p>
+                <ul class="has-text-left is-size-5">
+                    <li>📰 Up-to-date news reports </li>
+                    <li>📊 Player stats </li>
+                    <li>🏈 Player info </li>
                 </ul>
-            </div>   
+            </div>
         </div>
         <img class="bg" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg">
 

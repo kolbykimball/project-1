@@ -1,26 +1,28 @@
 h1 {
-    margin:16px;
-    width:100%;
+    margin: 16px;
+    width: 100%;
     /* text-align: center;
     padding: 10% 30%; */
 }
+
 h2 {
     font-size: large;
 }
+
 
 body {
     font-family: "Trirong", serif;
     /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg"); */
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 
 }
 
-.custom-div{
-    margin:20%;
-    text-align: center; 
+.custom-div {
+    margin: 20%;
+    text-align: center;
     /* background-color:white; */
-    
+
 }
 
 .custom-p {
@@ -35,26 +37,32 @@ body {
 
 .button {
     margin: 10px;
+    background-color: rgb(197, 44, 44);
+    color:white;
+    border:none;
 }
 
 #instructions {
     font-size: 22px;
 }
 
-.bg {
-     /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  z-index: -1;
+#player-imgEl {
+    transform: scale(150%);
+    padding: 23px 36px;
+}
 
-  opacity: 0.1;
-	
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
+.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.1;
+    /* Set up positioning */
+    position: fixed;
+    top: -200px;
+    left: 0;
 }
 
 /* from Kolby */
@@ -63,22 +71,28 @@ body {
 }
 
 
-.hero { 
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg);
+.hero {
+    background-image: url('../../assets/images/image\ 1\ from\ pexels.png');
     background-repeat: no-repeat;
-    background-position: center;  
-    position: relative;
-} 
+    background-position: center;
+    position: static;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 main {
     display: flex;
 }
+
 aside {
     flex: 30%;
     background-color: rgb(235, 235, 235);
     padding: 20px;
     flex-wrap: wrap;
 }
+
 section {
     flex: 70%;
     background-color: aliceblue;
@@ -97,8 +111,12 @@ section {
     color: rgb(255, 255, 255);
     font-size: 50px;
     text-align: left;
-    /* position: absolute; */
+    background-color: rgb(188, 24, 24);
+    padding:8px;
+    border-radius: 8px;
+    width:max-content;
     
+    /* position: absolute; */
 }
 
 .title-container {
@@ -106,15 +124,33 @@ section {
     /* background-color: whitesmoke;
     width: 30%;
     border-radius: 50%;  */
-} 
+}
+
+
+
 .subtitle {
     color: rgb(255, 255, 255);
     text-align: left;
-    
+    background-color:rgb(34, 34, 34);
+    width: max-content;
+    margin: 16px;
+    padding: 8px;
+    border-radius: 8px;
 
 
 }
+
 .panel-heading {
     background-color: rgb(197, 44, 44);
     color: white;
+}
+
+#bottom-panel{
+    border-radius:0 0 8px 8px;
+}
+
+#player-name-input{
+    text-align: center;
+    color:grey;
+    font-weight: bold;
 }

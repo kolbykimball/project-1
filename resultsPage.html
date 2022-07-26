@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,57 +8,77 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
         integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
+
 <body>
     <section class="hero is-small">
         <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <a class="navbar-item">
-                  <button class="button is-danger is-medium">Back</button>
-                </a>
-                <span class="navbar-burger" data-target="navbarMenuHeroA">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-              </div>
-            </div>
-          </nav>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a id="back-btn" class="navbar-item">
+                            <button class="button is-medium">Back to Search</button>
+                        </a>
+                        <span class="navbar-burger" data-target="navbarMenuHeroA">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
         </div>
         <div class="hero-body">
-          <!-- <img class="bg-image" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg"> -->
-
-          <div class="container has-text-centered title-container">
-            <p class="title">
-              Fantasy Football
-            </p>
-            <p class="subtitle">
-              Player Picker
-            </p>
-          </div>
+            <!-- <img class="bg-image" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg"> -->
+            <div
+                class="is-flex is-align-items-flex-start is-justify-content-space-between container has-text-centered title-container">
+                <!-- Heading Text on results page -->
+                <div class="column">
+                    <h1 class="title is-1">
+                        Fantasy Football
+                    </h1>
+                    <p class="subtitle">
+                        Player Picker
+                    </p>
+                </div>
+                <!-- Search BOX in header -->
+                <div class="column is-align-self-flex-end">
+                    <form id="search-form2">
+                        <input id="player-name-input2" type="text" class="input mt-3"
+                            placeholder="Example: '4314'=Tom Brady">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <button type="submit" for="player-name-input2" id="search-btn2" class="button is-link is-large">
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
     <main>
         <aside>
-            <h2>Player Stats</h2>
             <div class="card">
                 <div class="card-content">
                     <div class="media">
-                        <div class="media-left">
-                            
-                        </div>
                         <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            
+                            <img src="" id="player-imgEl">
+                            <p class="title is-4" id="player-nameEl">First Last</p>
                         </div>
                     </div>
                     <div class="player-stat-content">
-                        Player stats will show here
-                        <br>
+                        <ul>
+                            <li class="p-2 has-text-weight-bold">TEAM:   <span class="has-text-weight-light" id="teamEl"></span></li>
+                            <li class="p-2 has-text-weight-bold">NUMBER:     <span class="has-text-weight-light" id="numEl"></span></li>
+                            <li class="p-2 has-text-weight-bold">HEIGHT:     <span class="has-text-weight-light" id="hgtEl"></span></li>
+                            <li class="p-2 has-text-weight-bold">WEIGHT:     <span class="has-text-weight-light" id="wgtEl"></span></li>
+                            <li class="p-2 has-text-weight-bold">POSITION:    <span class="has-text-weight-light" id="posEl"></span></li>
+                            <li class="p-2 has-text-weight-bold">INJURIES:    <span class="has-text-weight-light" id="injEl"></span></li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -65,30 +86,32 @@
         <section>
             <article class="media">
                 <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <h2>News</h2> 
-                      <br>
-                      News regarding the player that is searched will show up here.
-                    </p>
-                  </div>
-                  <nav class="level is-mobile">
-                    <div class="level-left">
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-reply"></i></span>
-                      </a>
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-                      </a>
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-heart"></i></span>
-                      </a>
+                    <div class="content">
+                        <p>
+                        <h2>News</h2>
+                        <br>
+                        News regarding the player that is searched will show up here.
+                        </p>
                     </div>
-                  </nav>
+                    <nav class="level is-mobile">
+                        <div class="level-left">
+                            <a class="level-item">
+                                <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                            </a>
+                            <a class="level-item">
+                                <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                            </a>
+                            <a class="level-item">
+                                <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                            </a>
+                        </div>
+                    </nav>
                 </div>
-              </article>
+            </article>
         </section>
     </main>
+    <script src="./assets/script/script2.js"></script>
     <script src="./assets/script/script.js"></script>
 </body>
+
 </html>
