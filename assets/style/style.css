@@ -1,8 +1,13 @@
-*{
+
+* {
     h1
 }
 
+body {
+    font-family: "Trirong", serif;
+}
 
-.custom-p{
+.custom-p {
+
     font-size: 100px;
 }
