@@ -11,9 +11,11 @@ var pHeight = document.getElementById("hgtEl");
 var pWeight = document.getElementById("wgtEl");
 var pPosition = document.getElementById("posEl");
 var pInjuries = document.getElementById("injEl");
+var part = "";
+var searchHistory = [];
 
 bkBtn.addEventListener("click", function () {
-    window.open('./index.html'); 
+    window.open('./index.html');
     console.log("check");
 });
 
@@ -26,24 +28,25 @@ searchForm2.addEventListener("submit", function (event) {
         historyItems.push(searchText);
         onFetchPlayerStats();
         updatePlayerID();
+        
     } else {
         alert("Please enter a valid player name.")
         return;
     }
 });
 
-function updatePlayerID(){
+function updatePlayerID() {
     var idText = Number(playernameinput2El.value);
     pID.textContent = idText;
 };
 
-function onFetchPlayerStats(){
+function onFetchPlayerStats() {
     playerID = playernameinput2El.value;
     fetchPlayerStats(playerID);
 };
 
 function fetchPlayerStats(playerId) {
-   
+
     // var getPlayerStatsApi = `https://api.sportsdata.io/v3/nfl/stats/json/DailyFantasyPlayers/${date}?key=${apiKey}`;
     var getPlayerStatsApi2 = `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerId}?key=1e7382eee81a4fd19631d38f764c1449`
     fetch(getPlayerStatsApi2, {
@@ -60,7 +63,6 @@ function fetchPlayerStats(playerId) {
         console.log(data);
         pName.textContent = data.Name
         var playerImage = data.PhotoUrl
-        console.log(data.PhotoUrl)
         pImg.setAttribute("src", playerImage)
         pImg.setAttribute("style", "padding: 23px 36px; transform: scale(150%);")
         pTeam.textContent = data.Team
@@ -73,23 +75,30 @@ function fetchPlayerStats(playerId) {
     })
 }
 
-function init (){
+function init() {
     var searchQuery = window.location.search;
     var urlParams = new URLSearchParams(searchQuery);
     var playerIdInput = urlParams.get("playerid");
     console.log(playerIdInput);
     playernameinput2El.textContent = playerIdInput;
     fetchPlayerStats(playerIdInput);
-    
+    fetchNews();
+
 }
 
-init ();
+init();
 
-// function fetchPlayerStats(playerId) {
-//     var getPlayerStatsApi2 = `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerId}?key=1e7382eee81a4fd19631d38f764c1449`
-//     fetch(getPlayerStatsApi2, {
-//     }).then(function (response) {
-//         console.log(response);
-//         return response.json()
-//     })
-// };
+
+
+function fetchNews() {
+    var getNews = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/news";
+    fetch(getNews, {
+        method: 'GET',
+    }).then(function (response) {
+        console.log("test for news api")
+        console.log(response);
+        return response.json()
+    }).then(function (data) {
+        console.log(data);
+    })
+};
