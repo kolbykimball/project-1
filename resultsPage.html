@@ -34,22 +34,24 @@
     </div>
     <div class="hero-body">
       <!-- <img class="bg-image" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Qwest_Field_North.jpg"> -->
-      <div class="container has-text-centered title-container">
+      <div class="container has-text-centered title-container ">
         <!-- Heading Text on results page -->
-        <div class="column">
+        <div class="is-flex is-flex-direction-column is-align-items-center ">
+          
           <h1 class="title is-1">
             Fantasy Football
           </h1>
           <p class="subtitle">
             Player Picker
           </p>
+        
         </div>
       </div>
     </div>
   </section>
   <main>
-    <aside>
-      <div class="card">
+    <aside class="columns">
+      <div class="card column">
         <div class="card-content">
           <div class="media">
             <div class="media-content">
@@ -60,27 +62,31 @@
                   <button type="submit" for="player-name-input2" id="search-btn2" class="button is-link is-large">
                     Search
                   </button>
-                  <button id="clear-history-btn">Clear History</button>
                 </form>
               </div>
               <img src="" id="past-player-imgEl">
               <ul id="search-history">
-                <li>
-                  <p class="title is-4" id="past-player-nameEl">First Last <button id="clear-item-btn" >X</button></p>
+                <li style="display: flex;">
+                  <div class="column">
+                  <p class="title is-4" id="past-player-nameEl">First Last</p>
+                </div>
+                  <button id="clear-item-btn" class="button is-dark is-medium">X</button>
                 </li>
               </ul>
               
             </div>
           </div>
           <div class="past-player">
-
-
+            
+            
+            <button id="clear-history-btn" class="button is-warning is-small is-focused">Clear History</button>
           </div>
+          <div class="column is-1">
+          </div>
+          
         </div>
       </div>
-    </aside>
-    <aside>
-      <div class="card">
+      <div class="card column">
         <div class="card-content">
           <div class="media">
             <div class="media-content">
