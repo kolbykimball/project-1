@@ -24,8 +24,8 @@ searchForm2.addEventListener("submit", function (event) {
 
     if (searchText.length > 0) {
         historyItems.push(searchText);
-        updatePlayerID();
         onFetchPlayerStats();
+        updatePlayerID();
     } else {
         alert("Please enter a valid player name.")
         return;
@@ -34,7 +34,7 @@ searchForm2.addEventListener("submit", function (event) {
 
 function updatePlayerID(){
     var idText = Number(playernameinput2El.value);
-    pID.textContent= idText;
+    pID.textContent = idText;
 };
 
 function onFetchPlayerStats(){
@@ -84,3 +84,12 @@ function init (){
 }
 
 init ();
+
+// function fetchPlayerStats(playerId) {
+//     var getPlayerStatsApi2 = `https://api.sportsdata.io/v3/nfl/scores/json/Player/${playerId}?key=1e7382eee81a4fd19631d38f764c1449`
+//     fetch(getPlayerStatsApi2, {
+//     }).then(function (response) {
+//         console.log(response);
+//         return response.json()
+//     })
+// };

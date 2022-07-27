@@ -38,8 +38,8 @@ body {
 .button {
     margin: 10px;
     background-color: rgb(197, 44, 44);
-    color:white;
-    border:none;
+    color: white;
+    border: none;
 }
 
 #instructions {
@@ -80,10 +80,12 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    flex-direction: wrap;
 }
 
 main {
     display: flex;
+    flex-wrap: wrap;
 }
 
 aside {
@@ -99,45 +101,31 @@ section {
     padding: 20px;
 }
 
-/* .bg-image {
-    padding-left: 200px;
-    opacity: .3;
-    max-height: 800px;
-    max-width: 800px;
-    justify-content: center;
-} */
 
 .title {
     color: rgb(255, 255, 255);
     font-size: 50px;
-    text-align: left;
     background-color: rgb(188, 24, 24);
-    padding:8px;
+    padding: 8px;
     border-radius: 8px;
-    width:max-content;
-    
-    /* position: absolute; */
 }
 
 .title-container {
     position: relative;
-    /* background-color: whitesmoke;
-    width: 30%;
-    border-radius: 50%;  */
+    text-align: center;
 }
 
-
+.clear-item-btn {
+    float: right;
+}
 
 .subtitle {
     color: rgb(255, 255, 255);
-    text-align: left;
-    background-color:rgb(34, 34, 34);
-    width: max-content;
+    background-color: rgb(34, 34, 34);
+    /* width: max-content; */
     margin: 16px;
     padding: 8px;
     border-radius: 8px;
-
-
 }
 
 .panel-heading {
@@ -145,12 +133,12 @@ section {
     color: white;
 }
 
-#bottom-panel{
-    border-radius:0 0 8px 8px;
+#bottom-panel {
+    border-radius: 0 0 8px 8px;
 }
 
-#player-name-input{
+#player-name-input {
     text-align: center;
-    color:grey;
+    color: grey;
     font-weight: bold;
 }
