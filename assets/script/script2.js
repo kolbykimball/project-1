@@ -94,12 +94,16 @@ init();
 // CORY: Declare variables that reference the parts of the HTML code that you will modify with javascript here ⇩
 
 // Examples: 
+title1 = document.getElementById("art-title-1");
 title2 = document.getElementById("art-title-2");
 title3 = document.getElementById("art-title-3");
+author1 = document.getElementById("authors-1");
 author2 = document.getElementById("authors-2");
 author3 = document.getElementById("authors-3");
+artBody1 = document.getElementById("article-body-1");
 artBody2 = document.getElementById("article-body-2");
 artBody3 = document.getElementById("article-body-3");
+readMore1 = document.getElementById("read-more-1");
 readMore2 = document.getElementById("read-more-2");
 readMore3 = document.getElementById("read-more-3");
 // End message
@@ -117,12 +121,16 @@ function fetchNews() {
 // CORY:Change the text in the news article area 1 here⇩
 
 // Examples: 
+        title1.textContent=data.articles[0].headline;
         title2.textContent=data.articles[1].headline;
         title3.textContent=data.articles[2].headline;
+        author1.textContent=data.articles[0].byline;
         author2.textContent=data.articles[1].byline; 
         author3.textContent=data.articles[2].byline;
+        artBody1.textContent=data.articles[0].description;
         artBody2.textContent=data.articles[1].description; 
         artBody3.textContent=data.articles[2].description;
+        readMore1.setAttribute("href", data.articles[0].links.web.href);
         readMore2.setAttribute("href", data.articles[1].links.web.href);
         readMore3.setAttribute("href", data.articles[2].links.web.href);
     })
