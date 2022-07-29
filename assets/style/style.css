@@ -144,6 +144,14 @@ section {
     border-radius: 0 0 8px 8px;
 }
 
+li{
+    padding: 3px;
+    list-style-type:none;
+    background-image:none;
+    background-repeat:none;
+    background-position:0; 
+}
+
 #player-name-input {
     text-align: center;
     color: grey;
