@@ -125,13 +125,13 @@ function renderSearchHistory() {
         var historyItem = historyItems[i];
         var li = document.createElement('li');
         var button = document.createElement('button');
-        var deleteButton =document.createElement('button');
+        var deleteButton = document.createElement('button');
         button.setAttribute("class", "searchHistoryButton button");
-        button.textContent = historyItem;
-        deleteButton.textContent="X";
-        deleteButton.setAttribute("class", "button is-dark is-small");
+        button.innerHTML = "<p class='buttonText' >" + historyItem + "</p>";
+        deleteButton.textContent = "X";
+        deleteButton.setAttribute("class", "delete-button button is-dark is-small");
         deleteButton.setAttribute("style", "font-size: 16px; transform:translate(50px); border-radius: 8px;");
-        li.setAttribute("data-index", i);
+        button.setAttribute("data-index", i);
         li.append(button);
         button.append(deleteButton);
         // When appending list items, make the inner text the name and id and not just the number.
@@ -139,30 +139,41 @@ function renderSearchHistory() {
 
     }
 
+    var buttonTextEl = document.getElementsByClassName("buttonText");
     var searchHistoryBtn = document.getElementsByClassName("searchHistoryButton");
     console.log(searchHistoryBtn.length);
-    for (let i = 0; i < searchHistoryBtn.length; i++) {
-        searchHistoryBtn[i].addEventListener("click", function (event) {
-            playernameinput2El.value = event.target.innerHTML;
-            searchForm2.submit(event);
-            
+    for (let i = 0; i < buttonTextEl.length; i++) {
+        buttonTextEl[i].addEventListener("click", function (event) {
+            event.preventDefault();
+            playernameinput2El.value = event.target.textContent;
+            onFetchPlayerStats();
 
-        console.log("hello");
+            console.log("hello");
         })
-       
+
+    }
+
+
+
+    var deleteBtns = document.getElementsByClassName("delete-button");
+    for (let i = 0; i < deleteBtns.length; i++) {
+        deleteBtns[i].addEventListener("click", function (event) {
+            var element = event.target;
+            if (element.matches("button")) {
+                var index = element.parentElement.getAttribute("data-index");
+                historyItems.splice(index, 1);
+                storeHistory();
+                renderSearchHistory();
+                // refreshes the page
+                location.reload();
+            }
+        })
+
     }
 
 };
 
-searchHistoryBtn.addEventListener("click", function(event){
-    var element = event.target;
-    if(element.matches("button") === true) {
-        var index = element.parentElement.getAttribute("data-index");
-        historyItems.splice(index, 1);
-     
-        storeHistory();   
-        renderSearchHistory();
-    }
+searchHistoryBtn.addEventListener("click", function (event) {
 });
 
 function storeHistory() {
