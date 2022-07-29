@@ -28,6 +28,8 @@ searchForm2.addEventListener("submit", function (event) {
         historyItems.push(searchText);
         onFetchPlayerStats();
         updatePlayerID();
+        storeHistory();
+        renderSearchHistory();
         
     } else {
         alert("Please enter a valid player name.")
@@ -83,12 +85,13 @@ function init() {
     playernameinput2El.textContent = playerIdInput;
     fetchPlayerStats(playerIdInput);
     fetchNews();
+    renderSearchHistory();
 
 }
 
 init();
 
-// CORY: Declare variables that reference the parts of the HTML code that you will modify with javascript here⇩
+// CORY: Declare variables that reference the parts of the HTML code that you will modify with javascript here ⇩
 
 // Examples: 
 title2 = document.getElementById("art-title-2");
@@ -122,9 +125,9 @@ function fetchNews() {
         artBody3.textContent=data.articles[2].description;
         readMore2.setAttribute("href", data.articles[1].links.web.href);
         readMore3.setAttribute("href", data.articles[2].links.web.href);
-       
-
-
-
     })
 };
+
+function renderSearchHistory(){
+    
+}
