@@ -3,14 +3,8 @@
 ## Description
 For our first group project we decided to create a fantasy football app. The primary purpose for this app is to inform you on recent news and up-to-date stats for every player. This will help anyone drafting for their fantasy football team. If we had funds for this project there is more specific stats and news we would have liked to implement. 
 
-## Credits
-Jordan Ring-Sakabe (Team Lead)
-Kolby Kimball
-Austin Metcalf
-Cory Metcalf
-https://github.com/kolbykimball/project-1
-
-## Webpage
+## Deployed Application
+(Webpage)
 
 
 ## Screenshot
@@ -18,10 +12,20 @@ https://github.com/kolbykimball/project-1
 
 
 ## Features
-- Up-to-date
+- Up-to-date news and stats for all players with fantasy ID number. 
+- User friendly interface.
+- Information shared in an easily navigable format. 
+- Picture ID of fantasy players.
+
 ## How to Use
 - Insert the Fantasy Player Id Number into the search box. (If you do not know the number, you can use the link provided to find the player's id number)
 - Relevant player stats will be displayed on the screen along with relevant news and injury information about that player.
 - Your searches will automatically be saved to your browser's local storage so you can easily compare player stats.
 - With your knowledge of player statistics, you're now ready to make important trades and win your fantasy league.
 
+## Credits
+- Jordan Ring-Sakabe (Team Lead)
+- Kolby Kimball
+- Austin Metcalf
+- Cory Metcalf
+- https://github.com/kolbykimball/project-1
