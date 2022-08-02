@@ -11,7 +11,7 @@ var pWeight = document.getElementById("wgtEl");
 var pPosition = document.getElementById("posEl");
 var pInjuries = document.getElementById("injEl");
 var part = "";
-var searchHistory = [];
+var historyItems = [];
 
 bkBtn.addEventListener("click", function () {
     window.open('./index.html');
@@ -63,22 +63,29 @@ function fetchPlayerStats(playerId) {
 };
 
 function init() {
-    var storedHistory = JSON.parse(localStorage.getItem("historyItems"));
-    if (storedHistory !== null) {
-        historyItems = storedHistory;
-    }
+    historyItems = JSON.parse(localStorage.getItem("historyItems")) || [];
     var searchQuery = window.location.search;
     var urlParams = new URLSearchParams(searchQuery);
     var playerIdInput = urlParams.get("playerid");
     console.log(playerIdInput);
     playernameinput2El.textContent = playerIdInput;
+    console.log(searchQuery);
     fetchPlayerStats(playerIdInput);
     fetchNews();
     renderSearchHistory();
+    // var url = window.location.href;
+    // var modifiedUrl = url.split("?");
+    // console.log(modifiedUrl);
+    // window.location.replace(modifiedUrl[0]); 
+    // clearSearchParams();
 
 };
 
 init();
+
+// function clearSearchParams() {
+//     window.location.replace("")
+// }
 
 title1 = document.getElementById("art-title-1");
 title2 = document.getElementById("art-title-2");
@@ -118,32 +125,44 @@ function fetchNews() {
     })
 };
 
+var deleteSearch = document.getElementById("clear-search");
+
+deleteSearch.addEventListener("click", clearSearchQuery);
+
+function clearSearchQuery (){
+     var url = window.location.href;
+    var modifiedUrl = url.split("?");
+    console.log(modifiedUrl);
+    window.location.replace(modifiedUrl[0]); 
+}
+
 function renderSearchHistory() {
     var searchHistory = document.getElementById("search-history");
     searchHistory.innerHTML = "";
     for (let i = 0; i < historyItems.length; i++) {
         var historyItem = historyItems[i];
         var li = document.createElement('li');
+        li.setAttribute("style", "display: flex;")
         var button = document.createElement('button');
         var deleteButton = document.createElement('button');
         button.setAttribute("class", "searchHistoryButton button");
-        button.innerHTML = "<p class='buttonText' >" + historyItem + "</p>";
+        button.setAttribute("style", "margin-right: 0px; border-radius: 8px 0 0 8px");
+        button.textContent = historyItem;
         deleteButton.textContent = "X";
         deleteButton.setAttribute("class", "delete-button button is-dark is-small");
-        deleteButton.setAttribute("style", "font-size: 16px; transform:translate(50px); border-radius: 8px;");
+        deleteButton.setAttribute("style", "font-size: 16px; margin-left: 0px;  border-radius: 0 8px 8px 0;");
         button.setAttribute("data-index", i);
         li.append(button);
-        button.append(deleteButton);
+        li.append(deleteButton);
         // When appending list items, make the inner text the name and id and not just the number.
         searchHistory.append(li);
 
     }
 
-    var buttonTextEl = document.getElementsByClassName("buttonText");
+   
     var searchHistoryBtn = document.getElementsByClassName("searchHistoryButton");
-    console.log(searchHistoryBtn.length);
-    for (let i = 0; i < buttonTextEl.length; i++) {
-        buttonTextEl[i].addEventListener("click", function (event) {
+    for (let i = 0; i < searchHistoryBtn.length; i++) {
+        searchHistoryBtn[i].addEventListener("click", function (event) {
             event.preventDefault();
             playernameinput2El.value = event.target.textContent;
             onFetchPlayerStats();
@@ -161,10 +180,11 @@ function renderSearchHistory() {
             if (element.matches("button")) {
                 var index = element.parentElement.getAttribute("data-index");
                 historyItems.splice(index, 1);
+                playernameinput2El.value = "";
                 storeHistory();
                 renderSearchHistory();
                 // refreshes the page
-                location.reload();
+                // location.reload();
             }
         })
 
