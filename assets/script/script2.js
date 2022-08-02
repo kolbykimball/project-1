@@ -147,7 +147,6 @@ function renderSearchHistory() {
             event.preventDefault();
             playernameinput2El.value = event.target.textContent;
             onFetchPlayerStats();
-
             console.log("hello");
         })
 
@@ -179,3 +178,6 @@ searchHistoryBtn.addEventListener("click", function (event) {
 function storeHistory() {
     localStorage.setItem("historyItems", JSON.stringify(historyItems));
 };
+
+
+// When debugging code, go to the place where things start, look at the Event Listeners.
