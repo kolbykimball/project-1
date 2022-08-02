@@ -10,7 +10,7 @@ For our first group project we decided to create a fantasy football app. The pri
 ## Screenshot
 ![screencapture-127-0-0-1-5501-index-html-2022-07-28-19_46_29](https://user-images.githubusercontent.com/105259367/181665783-5d50ccd1-16c7-4c37-aab8-62d730850889.png)
 ![screenshot2](./assets/images/screencapture-127-0-0-1-5502-resultsPage-html-2022-08-01-19_06_01.png)
-![mobilescreenshot]()
+![mobilescreenshot](./assets/images/mobile-responsive%20image.png)
 
 ## Features
 - Up-to-date news and stats for all players with fantasy ID number. 
