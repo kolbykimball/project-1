@@ -6,8 +6,8 @@ var date = "2022-JAN-09";
 var currDT = moment().format("YYYY" + "-" + "MMM" + "-" + "DD").toUpperCase()
 var apiKey = "1e7382eee81a4fd19631d38f764c1449";
 var playerID = ""
-var historyItems = [];
 var idEl = document.getElementById('idEl');
+var searchHistory = [];
 
 function updatePlayerName(){
     playerID = playernameinputEl.value;
@@ -53,7 +53,9 @@ searchForm1.addEventListener("submit", function () {
     var searchText = playernameinputEl.value;
     
     if (searchText.length > 0) {
-        // historyItems.push(searchText);
+        searchHistory = JSON.parse(localStorage.getItem("historyItems")) || [];
+        searchHistory.push(searchText);
+        localStorage.setItem("historyItems", JSON.stringify(searchHistory));
         window.open(`./resultsPage.html?playerid=${searchText}`); 
 
     } else {
