@@ -51,8 +51,7 @@ fetchPlayerStats1();
 
 searchForm1.addEventListener("submit", function () {
     var searchText = playernameinputEl.value;
-    console.log(searchText);
-
+    
     if (searchText.length > 0) {
         // historyItems.push(searchText);
         window.open(`./resultsPage.html?playerid=${searchText}`); 

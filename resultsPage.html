@@ -45,34 +45,38 @@
   <main>
     <aside class="columns column is-full">
       <div class="card column">
-        <div class="media-content">
-          <div class="column is-align-self-flex-end">
-            <form id="search-form2">
-              <input id="player-name-input2" type="text" class="input mt-3" placeholder="Example: '4314'=Tom Brady">
-              <i class="fas fa-search" aria-hidden="true"></i>
-              <button type="submit" for="player-name-input2" id="search-btn2" class="button is-link is-large">
-                Search
-              </button>
-            </form>
-          </div>
-          <img src="" id="past-player-imgEl">
-          <ul id="search-history">
-            <li style="display: flex;">
-              <div class="column">
-                <ul>
-                  <li>
-                    <p class="title is-4" id="past-player-nameEl">First Last</p>
-                  </li>
-                </ul>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <div class="column is-align-self-flex-end">
+                <form id="search-form2">
+                  <input id="player-name-input2" type="text" class="input mt-3" placeholder="Example: '4314'=Tom Brady">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <button type="submit" for="player-name-input2" id="search-btn2" class="button is-link is-large">
+                    Search
+                  </button>
+                </form>
               </div>
-              <button id="clear-item-btn" class="button is-dark is-medium">X</button>
-            </li>
-          </ul>
-        </div>
-        <div class="past-player">
-          <button id="clear-history-btn" class="button is-warning is-small is-focused">Clear History</button>
-        </div>
-        <div class="column is-1">
+              <img src="" id="past-player-imgEl">
+              <ul id="search-history">
+                <li style="display: flex;">
+                  <div class="column">
+                   <!-- SEARCH HISTORY -->
+                    <ul id="search-history">
+                      <li>
+                        <p class="title is-4" id="past-player-nameEl">First Last</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="clear-item-btn" class="button is-dark is-medium">X</button>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="column is-1">
+          </div>
+
         </div>
       </div>
       <div class="card column">

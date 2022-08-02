@@ -11,6 +11,13 @@ body {
 .custom-div {
     margin: 20%;
     text-align: center;
+    /* background-color:white; */
+
+}
+
+.custom-p {
+    font-size: 100px;
+
 }
 
 .panel-heading {
@@ -141,4 +148,3 @@ li{
 
 /* #media screen and (max-width: 992px) {
     
-} */
